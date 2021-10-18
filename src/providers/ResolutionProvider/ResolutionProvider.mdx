@@ -1,0 +1,22 @@
+---
+name: ResolutionProvider
+menu: Providers
+---
+
+import { Playground, Props } from 'docz';
+import { ResolutionProvider } from './index';
+import useAdaptive from '../../utils/useAdaptive'
+import { ExampleComponent } from './example';
+
+# ResolutionProvider
+The resolution provider offers a context with the resolution. You can use the `useAdaptive` to get the context.
+
+# Properties
+<Props of={ResolutionProvider} />
+
+### Basic example
+<Playground>
+  <ResolutionProvider wait={200}>
+    <ExampleComponent />
+  </ResolutionProvider>
+</Playground>

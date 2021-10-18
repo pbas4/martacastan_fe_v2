@@ -1,0 +1,92 @@
+@import './generalStyles';
+
+// Overwrite fullpage css
+#fullpage {
+  transition-delay: 1s !important;
+}
+
+.animateIn {
+  animation: animateIn .5s ease-out forwards;
+}
+
+.animateOut {
+  animation: animateOut .5s ease-in forwards;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#fp-nav {
+  ul li {
+    width: 24px !important;
+    height: 24px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+
+    * {
+      transition: all .3s !important;
+    }
+
+    &:hover {
+      span {
+        margin: 0 !important;
+        background-color: $lightBlue;
+        width: 8px !important;
+        height: 8px !important;
+      }
+
+      .active span {
+        width: 18px !important;
+        height: 18px !important;
+      }
+    }
+
+    a span {
+      background: $white;
+      width: 8px !important;
+      height: 8px !important;
+      margin: 0 !important;
+      left: 0 !important;
+      top: 0 !important;
+      transform: translate(8px, 8px) !important;
+    }
+  }
+  
+  .active {
+    span {
+      width: 18px !important;
+      height: 18px !important;
+      background: $backgroundColor;
+      border: 1px solid $lightBlue;
+      left: 0 !important;
+      top: 0 !important;
+      transform: translate(3px, 3px) !important;
+      margin: 0 !important;
+    }
+  }
+}
+
+@keyframes animateIn {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes animateOut {
+  from {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+}
