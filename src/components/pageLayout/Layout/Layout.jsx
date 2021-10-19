@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Header from '../Header';
 
 const LayoutWrapper = styled.div`
   margin: 0 auto;
@@ -15,13 +14,10 @@ const LayoutWrapper = styled.div`
   `}
 `;
 
-const Layout = ({ children, logoImage }) => (
-  <>
-    <Header logoImage={logoImage} />
-    <LayoutWrapper>
-      {children}
-    </LayoutWrapper>
-  </>
+const Layout = ({ children }) => (
+  <LayoutWrapper>
+    {children}
+  </LayoutWrapper>
 );
 
 export default Layout;

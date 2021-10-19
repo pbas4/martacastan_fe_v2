@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import Layout from '../../components/pageLayout/Layout/Layout';
+/* eslint-disable react/no-unescaped-entities */
 import { SectionTitle } from '../SectionContainer/components';
 import {
   ContentContainer,
@@ -11,7 +11,7 @@ import {
 import SocialLink from './components/SocialLink/SocialLink';
 
 const About = () => (
-  <Layout>
+  <>
     <SectionTitle>ABOUT</SectionTitle>
     <ContentContainer>
       <SideContainer>
@@ -26,7 +26,7 @@ const About = () => (
         </SocialLinkWrapper>
       </SideContainer>
     </ContentContainer>
-  </Layout>
+  </>
 );
 
 export default About;

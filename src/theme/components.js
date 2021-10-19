@@ -30,6 +30,7 @@ const components = {
       letterSpacing: 0.06,
       color: theme.colors.whiteLight,
       colorHover: theme.colors.white,
+      colorActive: theme.colors.white,
     },
   },
 };

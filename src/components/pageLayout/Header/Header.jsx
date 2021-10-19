@@ -1,9 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable no-nested-ternary */
-import CrossIcon from '../../atoms/CrossIcon';
-import BackIcon from '../../atoms/BackIcon';
-import { useGlobalStateContext, useGlobalDispatchContext } from '../../../context/globalContext';
+import { NavLink } from 'react-router-dom';
 import {
   HeaderWrapper,
   HeaderContent,
@@ -11,63 +9,29 @@ import {
   ListContainer,
 } from './components';
 
-const Header = ({ logoImage }) => {
-  const { displaySection } = useGlobalStateContext();
-  const dispatch = useGlobalDispatchContext();
+const Header = ({ logoImage }) => (
+  <HeaderWrapper>
+    <HeaderContent>
+      <ImgContainer as={NavLink} to="/">
+        {/* <Image fluid={logoImage?.childImageSharp?.fluid} /> */}
+        Image
+      </ImgContainer>
 
-  const handleCloseSection = () => {
-    dispatch({
-      type: 'DISPLAY_SECTION',
-      displaySection: {
-        isLanding: true,
-        sectionName: 'landing',
-      },
-    });
-  };
+      <ListContainer>
+        <li>
+          <NavLink to="/projects" activeClassName="active-link-selected">
+            Projects
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/about" activeClassName="active-link-selected">
+            About
+          </NavLink>
+        </li>
+      </ListContainer>
 
-  const handleGoToProjects = () => {
-    dispatch({
-      type: 'DISPLAY_SECTION',
-      displaySection: {
-        isLanding: false,
-        sectionName: 'Projects',
-      },
-    });
-  };
-
-  const handleGoToAbout = () => {
-    dispatch({
-      type: 'DISPLAY_SECTION',
-      displaySection: {
-        isLanding: false,
-        sectionName: 'About',
-      },
-    });
-  };
-
-  return (
-    <HeaderWrapper>
-      <HeaderContent>
-        <ImgContainer>
-          {/* <Image fluid={logoImage?.childImageSharp?.fluid} /> */}
-          Image
-        </ImgContainer>
-
-        {displaySection.isLanding ? (
-          <ListContainer>
-            <li onClick={handleGoToProjects}>Projects</li>
-            <li onClick={handleGoToAbout}>About</li>
-          </ListContainer>
-        ) : (
-          displaySection.sectionName !== 'Project' ? (
-            <CrossIcon onClick={handleCloseSection} />
-          ) : (
-            <BackIcon onClick={handleGoToProjects} />
-          )
-        )}
-      </HeaderContent>
-    </HeaderWrapper>
-  );
-};
+    </HeaderContent>
+  </HeaderWrapper>
+);
 
 export default Header;

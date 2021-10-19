@@ -40,7 +40,6 @@ export const ListContainer = styled.ul`
 
   li {
     cursor: pointer;
-    padding: 10px;
     transition: color .3s;
 
     ${({ theme: { header: { links } } }) => `
@@ -53,5 +52,15 @@ export const ListContainer = styled.ul`
         color: ${links.colorHover};
       }
     `}
-  } 
+
+    a {
+      padding: 10px;
+    }
+  }
+
+  a.active-link-selected {
+    ${({ theme: { header: { links } } }) => `
+      color: ${links.colorActive};
+    `}
+  }
 `;

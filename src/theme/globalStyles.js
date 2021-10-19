@@ -78,6 +78,7 @@ const GlobalStyles = createGlobalStyle`
   /* Style links */
   a {
     text-decoration: none;
+    color: inherit;
   }
 
   /* A elements that don't have a class get default styles */
