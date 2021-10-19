@@ -10,6 +10,7 @@ import { GlobalProvider } from './context/globalContext';
 
 const LandingPage = lazy(() => import('./pages/LandingPage/LandingPage'));
 const About = lazy(() => import('./pages/About/About'));
+const Projects = lazy(() => import('./pages/Projects/Projects'));
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <Switch>
                 <Route path="/" exact component={LandingPage} />
                 <Route path="/about" component={About} />
+                <Route path="/projects" component={Projects} />
               </Switch>
             </Suspense>
           </Router>

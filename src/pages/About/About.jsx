@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import Layout from '../../components/pageLayout/Layout/Layout';
-// import { SectionTitle } from '../SectionContainer/components';
+import { SectionTitle } from '../SectionContainer/components';
 import {
   ContentContainer,
   SideContainer,
@@ -12,7 +12,7 @@ import SocialLink from './components/SocialLink/SocialLink';
 
 const About = () => (
   <Layout>
-    {/* <SectionTitle>ABOUT</SectionTitle> */}
+    <SectionTitle>ABOUT</SectionTitle>
     <ContentContainer>
       <SideContainer>
         <DescriptionTitle>From Barcelona based in Amsterdam.</DescriptionTitle>
