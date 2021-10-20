@@ -14,6 +14,11 @@ import {
   ImageContainer,
 } from './components';
 
+const descriptionItem = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 },
+};
+
 const Project = () => {
   const { projectId } = useParams();
   const { isLoading, error, data: projectData } = useQuery(['projects', projectId], () => getProject(projectId));
@@ -27,6 +32,10 @@ const Project = () => {
             mainSrc={projectData.main_image.url}
             altText={projectData.main_image.name}
             style={{ width: '100%', objectFit: 'cover' }}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            variants={descriptionItem}
           />
         </MainImageWrapper>
 

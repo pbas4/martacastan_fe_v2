@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 // TODO: do this responsive properly
 export const ContentContainer = styled.div`
@@ -13,7 +14,7 @@ export const ContentContainer = styled.div`
   `}
 `;
 
-export const SideContainer = styled.div`
+export const SideContainer = styled(motion.div)`
   width: 100%;
 
   ${({ theme }) => theme.media.md`
@@ -21,14 +22,14 @@ export const SideContainer = styled.div`
   `}
 `;
 
-export const DescriptionTitle = styled.h2`
+export const DescriptionTitle = styled(motion.h2)`
   font-size: 1.4em;
   font-weight: 200;
   color: ${({ theme: { colors } }) => `${colors.white}`};
   margin-bottom: 10px;
 `;
 
-export const Description = styled.p`
+export const Description = styled(motion.p)`
   font-size: 1.2em;
   font-weight: 200;
   color: ${({ theme: { colors } }) => `${colors.softLight}`};
@@ -43,11 +44,11 @@ export const Description = styled.p`
   `}
 `;
 
-export const SocialLinkWrapper = styled.div`
+export const SocialLinkWrapper = styled(motion.div)`
   margin-top: 16px;
 `;
 
-export const SocialLinkContainer = styled.div`
+export const SocialLinkContainer = styled(motion.div)`
   display: flex;
   align-items: center;
   color: ${({ theme: { colors } }) => `${colors.softLight}`};

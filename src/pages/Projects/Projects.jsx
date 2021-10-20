@@ -11,6 +11,22 @@ import BgImage from './Components/BgImage';
 import { getProjects } from '../../resource/projects';
 import useIsDesktop from '../../hooks/useIsDesktop';
 
+const filterContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const filterItem = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 },
+};
+
 const Projects = () => {
   const { isLoading, error, data: projectsData = { projects: [], filters: [] } } = useQuery('projects', getProjects);
   const { projects, filters } = projectsData;
@@ -60,12 +76,16 @@ const Projects = () => {
           <>
             <FilterContainer
               key="FILTER"
+              variants={filterContainer}
+              initial="hidden"
+              animate="show"
             >
               {filters.map(({ name }) => (
                 <FilterItem
                   key={name}
                   onClick={() => setSelectedFilter(name)}
                   isSelected={name === selectedFilter}
+                  variants={filterItem}
                 >
                   {name}
                 </FilterItem>
