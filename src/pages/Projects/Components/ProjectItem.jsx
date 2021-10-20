@@ -3,6 +3,7 @@
 import { ListItem, ItemContent, ListItemImage } from '../components';
 import Arrow from './Arrow';
 import useIsDesktop from '../../../hooks/useIsDesktop';
+import ResponsiveImage from '../../../components/atoms/ResponsiveImage/ResponsiveImage';
 
 const ProjectItem = ({
   isLast,
@@ -67,7 +68,11 @@ const ProjectItem = ({
 
       {!isDesktop && (
         <ListItemImage>
-          Image
+          <ResponsiveImage
+            formats={mainImage.formats}
+            mainSrc={mainImage.url}
+            altText={mainImage.name}
+          />
           {/* <BackgroundImage
             Tag="div"
             fluid={mainImage?.childImageSharp?.fluid}

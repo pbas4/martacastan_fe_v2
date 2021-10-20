@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-// import BackgroundImage from 'gatsby-background-image';
+import ResponsiveImage from '../../../components/atoms/ResponsiveImage/ResponsiveImage';
 
 const ImageContainer = styled(motion.div)`
   width: 50vw;
@@ -11,11 +11,6 @@ const ImageContainer = styled(motion.div)`
   right: 0;
   z-index: -1;
 
-  background-color: white;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
   opacity: .6;
 `;
 
@@ -24,14 +19,14 @@ const BgImage = ({ bgImage }) => (
     transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
     initial={{ opacity: 0, x: 100 }}
     animate={{ opacity: 1, x: 0 }}
-    // exit={{ opacity: 0, x: 100, ease: 'easeIn' }}
+    exit={{ opacity: 0, x: 100, ease: 'easeIn' }}
   >
-    Image
-    {/* <BackgroundImage
-      Tag="div"
-      fluid={bgImage?.childImageSharp?.fluid}
-      style={{ width: '100%', height: '100%' }}
-    /> */}
+    <ResponsiveImage
+      formats={bgImage.formats}
+      mainSrc={bgImage.url}
+      altText={bgImage.name}
+      style={{ width: '100%', minHeight: '100%', objectFit: 'cover' }}
+    />
   </ImageContainer>
 );
 
