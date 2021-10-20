@@ -15,6 +15,7 @@ import { GlobalProvider } from './context/globalContext';
 const Homepage = lazy(() => import('./pages/Homepage/Homepage'));
 const About = lazy(() => import('./pages/About/About'));
 const Projects = lazy(() => import('./pages/Projects/Projects'));
+const Project = lazy(() => import('./pages/Project/Project'));
 
 const queryClient = new QueryClient();
 
@@ -33,7 +34,9 @@ function App() {
                   <Switch>
                     <Route path="/" exact component={Homepage} />
                     <Route path="/about" component={About} />
+                    <Route path="/projects/:projectId" component={Project} />
                     <Route path="/projects" component={Projects} />
+                    {/* TODO: add not found */}
                   </Switch>
                 </Suspense>
               </Layout>

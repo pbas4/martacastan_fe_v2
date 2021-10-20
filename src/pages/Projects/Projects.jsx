@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useHistory } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { useQuery } from 'react-query';
 import { SectionTitle } from '../SectionContainer/components';
@@ -9,15 +10,13 @@ import ProjectItem from './Components/ProjectItem';
 import BgImage from './Components/BgImage';
 import { getProjects } from '../../resource/projects';
 import useIsDesktop from '../../hooks/useIsDesktop';
-import { useGlobalDispatchContext } from '../../context/globalContext';
 
 const Projects = () => {
   const { isLoading, error, data: projectsData = { projects: [], filters: [] } } = useQuery('projects', getProjects);
   const { projects, filters } = projectsData;
-  console.log('projects', projects);
 
+  const history = useHistory();
   const isDesktop = useIsDesktop();
-  const dispatch = useGlobalDispatchContext();
 
   const [revealImage, setRevealImage] = useState({
     show: false,
@@ -48,18 +47,7 @@ const Projects = () => {
   };
 
   const handleProjectSelect = (projectId) => {
-    dispatch({
-      type: 'DISPLAY_SECTION',
-      displaySection: {
-        isLanding: false,
-        sectionName: 'Project',
-      },
-    });
-
-    dispatch({
-      type: 'SELECT_PROJECT',
-      selectedProject: projectId,
-    });
+    history.push(`projects/${projectId}`);
   };
 
   return (
