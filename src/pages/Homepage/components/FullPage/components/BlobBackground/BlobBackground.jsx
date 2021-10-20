@@ -1,16 +1,14 @@
 import { BackgroundSection } from './components';
+import ResponsiveImage from '../../../../../../components/atoms/ResponsiveImage/ResponsiveImage';
 
-const BlobBackground = ({ imgFluid, onHover, onHoverLeave }) => (
+const BlobBackground = ({
+  bgImage, onHover, onHoverLeave,
+}) => (
   <BackgroundSection
     onHoverStart={onHover}
     onHoverEnd={onHoverLeave}
   >
-    {/* <BackgroundImage
-      Tag="div"
-      fluid={imgFluid}
-      style={{ width: '400px', height: '400px' }}
-    /> */}
-    Image
+    <ResponsiveImage formats={bgImage.formats} mainSrc={bgImage.url} altText={bgImage.name} />
   </BackgroundSection>
 );
 

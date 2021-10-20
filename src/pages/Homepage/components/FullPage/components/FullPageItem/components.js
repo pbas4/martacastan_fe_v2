@@ -66,7 +66,7 @@ export const Blob = styled(motion.div)`
     ${morph} 25s ease-in-out infinite both alternate,
     ${movement} 25s ease-in-out infinite both;
     
-  ${(props) => props.isBlobHovered && css`
+  /* ${(props) => props.isBlobHovered && css`
     transform: scale(1.03);
-  `}
+  `} */
 `;

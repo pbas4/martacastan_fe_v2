@@ -1,17 +1,12 @@
-import { useEffect, useState } from 'react';
-import axios from '../../resource/instance';
+import { useQuery } from 'react-query';
+import { getHomepage } from '../../resource/homepage';
 import FullPage from './components/FullPage/FullPage';
 
 const LandingPage = () => {
-  const [data, setData] = useState(null);
-
-  useEffect(async () => {
-    const response = await axios.get('/homepage');
-    setData(response.data);
-  }, []);
+  const { isLoading, error, data: homepageData } = useQuery('homepage', getHomepage);
 
   return (
-    data && <FullPage landingPageData={data} />
+    !isLoading && !error && <FullPage landingPageData={homepageData} />
   );
 };
 

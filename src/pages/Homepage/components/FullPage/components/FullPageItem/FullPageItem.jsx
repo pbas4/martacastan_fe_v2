@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import {
   Container,
   BlobContainer,
@@ -14,7 +13,6 @@ function LandingPage({
   handleOnClick,
   componentIndex,
 }) {
-  const [isBlobHovered, setIsBlobHovered] = useState(false);
   const parentVariants = {
     show: {
       opacity: 1,
@@ -56,17 +54,9 @@ function LandingPage({
       onClick={(section) => handleOnClick(section)}
     >
       <BlobContainer isClickable={componentIndex !== 0}>
-        <Title
-          title={title}
-          description={description}
-          // TODO add effect
-        />
-        <Blob variants={blobVariants} isBlobHovered={isBlobHovered}>
-          <BlobBackground
-            onHover={() => setIsBlobHovered(true)}
-            onHoverLeave={() => setIsBlobHovered(false)}
-            imgFluid={bgImage?.childImageSharp?.fluid}
-          />
+        <Title title={title} description={description} />
+        <Blob variants={blobVariants}>
+          <BlobBackground bgImage={bgImage} />
         </Blob>
       </BlobContainer>
     </Container>

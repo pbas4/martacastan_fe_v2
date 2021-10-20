@@ -14,7 +14,7 @@ const Header = ({ logoImage }) => (
     <HeaderContent>
       <ImgContainer as={NavLink} to="/">
         {/* <Image fluid={logoImage?.childImageSharp?.fluid} /> */}
-        Image
+        <img src={logoImage} alt="Logo" />
       </ImgContainer>
 
       <ListContainer>
