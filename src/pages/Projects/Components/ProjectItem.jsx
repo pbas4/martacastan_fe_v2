@@ -1,5 +1,4 @@
-// import Markdown from 'react-markdown';
-// import BackgroundImage from 'gatsby-background-image';
+import Markdown from 'react-markdown';
 import { ListItem, ItemContent, ListItemImage } from '../components';
 import Arrow from './Arrow';
 import useIsDesktop from '../../../hooks/useIsDesktop';
@@ -59,8 +58,7 @@ const ProjectItem = ({
         <div className="title">
           {title}
           <span>
-            {/* <Markdown>{shortDescription}</Markdown> */}
-            Description
+            <Markdown>{shortDescription}</Markdown>
           </span>
         </div>
 
@@ -73,11 +71,6 @@ const ProjectItem = ({
             mainSrc={mainImage.url}
             altText={mainImage.name}
           />
-          {/* <BackgroundImage
-            Tag="div"
-            fluid={mainImage?.childImageSharp?.fluid}
-            style={{ width: '100%', height: '100%' }}
-          /> */}
         </ListItemImage>
       )}
     </ListItem>
