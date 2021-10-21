@@ -3,8 +3,8 @@ import {
   BlobContainer,
   Blob,
 } from './components';
-import Title from '../Title';
-import BlobBackground from '../BlobBackground';
+import Title from '../Title/Title';
+import BlobBackground from '../BlobBackground/BlobBackground';
 
 function LandingPage({
   title,
@@ -51,7 +51,7 @@ function LandingPage({
       animate="show"
       exit="hidden"
       key={title}
-      onClick={(section) => handleOnClick(section)}
+      onClick={() => handleOnClick()}
     >
       <BlobContainer isClickable={componentIndex !== 0}>
         <Title title={title} description={description} />

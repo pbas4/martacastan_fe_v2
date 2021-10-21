@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query';
-import { SectionTitle } from '../SectionContainer/components';
+import { SectionTitle } from '../../components/pageLayout/SectionContainer/components';
 import Layout from '../../components/pageLayout/Layout/Layout';
-import SectionContainer from '../SectionContainer/SectionContainer';
+import SectionContainer from '../../components/pageLayout/SectionContainer/SectionContainer';
 import {
   ContentContainer,
   SideContainer,
