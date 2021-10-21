@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import ResponsiveImage from '../../../components/atoms/ResponsiveImage/ResponsiveImage';
+import ResponsiveImage from '../../../components/ResponsiveImage/ResponsiveImage';
 
 const ImageContainer = styled(motion.div)`
   width: 50vw;

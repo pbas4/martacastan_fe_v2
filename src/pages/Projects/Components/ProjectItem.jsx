@@ -2,7 +2,7 @@ import Markdown from 'react-markdown';
 import { ListItem, ItemContent, ListItemImage } from '../components';
 import Arrow from './Arrow';
 import useIsDesktop from '../../../hooks/useIsDesktop';
-import ResponsiveImage from '../../../components/atoms/ResponsiveImage/ResponsiveImage';
+import ResponsiveImage from '../../../components/ResponsiveImage/ResponsiveImage';
 
 const ProjectItem = ({
   isLast,

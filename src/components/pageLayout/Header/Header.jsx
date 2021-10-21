@@ -20,12 +20,12 @@ const Header = ({ logoImage }) => (
       <ListContainer>
         <li>
           <NavLink to="/projects" activeClassName="active-link-selected">
-            Projects
+            PROJECTS
           </NavLink>
         </li>
         <li>
           <NavLink to="/about" activeClassName="active-link-selected">
-            About
+            ABOUT
           </NavLink>
         </li>
       </ListContainer>

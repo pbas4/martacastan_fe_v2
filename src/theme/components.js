@@ -13,13 +13,13 @@ const components = {
         fontSize: 2.6,
         letterSpacing: 0.03,
       },
-      color: theme.colors.white,
+      color: theme.colors.softLight,
     },
     description: {
       fontSize: 1.6,
       fontWeight: 200,
       letterSpacing: 0.02,
-      color: theme.colors.white,
+      color: theme.colors.softLight,
     },
   },
   header: {

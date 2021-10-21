@@ -16,7 +16,7 @@ const FullPage = ({ landingPageData }) => {
   const scrollDown = useCallback(
     debounce(
       () => setComponent((prevComp) => (prevComp < 2 ? prevComp + 1 : prevComp)),
-      600, { leading: false, trailing: true },
+      400, { leading: false, trailing: true },
     ),
     [],
   );
@@ -24,7 +24,7 @@ const FullPage = ({ landingPageData }) => {
   const scrollUp = useCallback(
     debounce(
       () => setComponent((prevComp) => (prevComp > 0 ? prevComp - 1 : prevComp)),
-      600, { leading: false, trailing: true },
+      400, { leading: false, trailing: true },
     ),
     [],
   );
@@ -38,7 +38,13 @@ const FullPage = ({ landingPageData }) => {
       }
     });
 
-    return () => window.removeEventListener('wheel', () => {});
+    return () => window.removeEventListener('wheel', (e) => {
+      if (e.deltaY < 0) {
+        scrollUp();
+      } else if (e.deltaY > 0) {
+        scrollDown();
+      }
+    });
   }, []);
 
   return (
