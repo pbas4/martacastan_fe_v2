@@ -10,7 +10,6 @@ import theme from './theme/theme';
 import components from './theme/components';
 import GlobalStyles from './theme/globalStyles';
 import { ResolutionProvider } from './providers/ResolutionProvider';
-import { GlobalProvider } from './context/globalContext';
 
 const Homepage = lazy(() => import('./pages/Homepage/Homepage'));
 const About = lazy(() => import('./pages/About/About'));
@@ -22,28 +21,26 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <GlobalProvider>
-        <ThemeProvider theme={{ ...theme, ...components }}>
-          <ResolutionProvider>
-            <GlobalStyles />
-            <Router>
-              <Header logoImage={logo} />
+      <ThemeProvider theme={{ ...theme, ...components }}>
+        <ResolutionProvider>
+          <GlobalStyles />
+          <Router>
+            <Header logoImage={logo} />
 
-              <Layout>
-                <Suspense fallback="">
-                  <Switch>
-                    <Route path="/" exact component={Homepage} />
-                    <Route path="/about" component={About} />
-                    <Route path="/projects/:projectId" component={Project} />
-                    <Route path="/projects" component={Projects} />
-                    {/* TODO: add not found */}
-                  </Switch>
-                </Suspense>
-              </Layout>
-            </Router>
-          </ResolutionProvider>
-        </ThemeProvider>
-      </GlobalProvider>
+            <Layout>
+              <Suspense fallback="">
+                <Switch>
+                  <Route path="/" exact component={Homepage} />
+                  <Route path="/about" component={About} />
+                  <Route path="/projects/:projectId" component={Project} />
+                  <Route path="/projects" component={Projects} />
+                  {/* TODO: add not found */}
+                </Switch>
+              </Suspense>
+            </Layout>
+          </Router>
+        </ResolutionProvider>
+      </ThemeProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );

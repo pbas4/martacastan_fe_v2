@@ -1,5 +1,5 @@
 import { BackgroundSection } from './components';
-import ResponsiveImage from '../../../../../../components/atoms/ResponsiveImage/ResponsiveImage';
+import ResponsiveImage from '../../../../../../components/ResponsiveImage/ResponsiveImage';
 
 const BlobBackground = ({
   bgImage, onHover, onHoverLeave,

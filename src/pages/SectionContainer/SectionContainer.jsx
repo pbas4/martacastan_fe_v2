@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-// import { useGlobalStateContext } from '../../context/globalContext';
-// import Projects from '../Projects/Projects';
-// import About from '../About/About';
-// import Project from '../Project';
 
 const FullContainer = styled(motion.div)`
   width: 100vw;
@@ -35,17 +31,8 @@ const Container = styled(motion.div)`
 `;
 
 const SectionContainer = ({ children }) => {
-  // const { displaySection } = useGlobalStateContext();
-  // const getSectionComponent = () => {
-  //   if (displaySection.sectionName === 'Projects') return Projects;
-  //   // if (displaySection.sectionName === 'Project') return Project;
-  //   return About;
-  // };
-  // const SectionComponent = getSectionComponent();
-
   const variants = {
     hidden: {
-      // x: '100%',
       opacity: 0,
       transition: {
         duration: 0.5,
@@ -53,7 +40,6 @@ const SectionContainer = ({ children }) => {
       },
     },
     show: {
-      // x: 0,
       opacity: 1,
       transition: {
         duration: 1,
@@ -74,11 +60,6 @@ const SectionContainer = ({ children }) => {
         <Container>
           {children}
         </Container>
-        {/* {SectionComponent && (
-          <Container>
-            <SectionComponent />
-          </Container>
-        )} */}
       </FullContainer>
     </>
   );

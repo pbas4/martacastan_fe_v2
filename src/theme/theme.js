@@ -11,14 +11,6 @@ const mediaQueryBuilder = (sizes) => Object.keys(sizes).reduce((acc, label) => {
 
 const fontFamily = '"Heebo", "Helvetica", "Arial", sans-serif';
 
-const fontSize = {
-
-};
-
-const lineHeight = {
-
-};
-
 const colors = {
   white: '#F2F2F2',
   softLight: 'rgba(242, 242, 242, .8)',
@@ -65,8 +57,6 @@ const pageMargins = {
 
 const theme = {
   fontFamily,
-  fontSize,
-  lineHeight,
   colors,
   screenWidths,
   breakpoints,

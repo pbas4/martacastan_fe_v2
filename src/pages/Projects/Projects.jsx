@@ -57,7 +57,7 @@ const Projects = () => {
       y: 0,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 1,
+        delayChildren: 0.6,
       },
     },
   };

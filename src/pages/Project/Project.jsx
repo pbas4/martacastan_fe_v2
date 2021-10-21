@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import Markdown from 'react-markdown';
 import { motion } from 'framer-motion';
 import { getProject } from '../../resource/project';
-import ResponsiveImage from '../../components/atoms/ResponsiveImage/ResponsiveImage';
+import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 import {
   MainImageWrapper,
   ContentWrapper,
@@ -95,6 +95,7 @@ const Project = () => {
             ))}
           </ImagesWrapper>
         </ContentWrapper>
+
       </motion.div>
     )
   );
