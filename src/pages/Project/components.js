@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const MainImageWrapper = styled.div`
+export const MainImageWrapper = styled(motion.div)`
   width: 100vw;
   height: 60vh;
   position: absolute;
@@ -9,7 +10,7 @@ export const MainImageWrapper = styled.div`
   overflow: hidden;
 `;
 
-export const ContentWrapper = styled.div`
+export const ContentWrapper = styled(motion.div)`
   margin-top: 60vh;
   position: relative;
   width: 100%;
@@ -47,17 +48,23 @@ export const Category = styled.p`
 `;
 
 export const Description = styled.div`
-  columns: 2;
-  
-  ${({ theme: { landingPage, media } }) => media.md && `
+  columns: 1;
+  font-size: .9em;
+  line-height: 1.6em;
+
+  ${({ theme: { landingPage } }) => `
     color: ${landingPage.description.color};
-    font-size: 1em;
     font-weight: ${landingPage.description.fontWeight};
     letter-spacing: ${landingPage.description.letterSpacing}em;
+    `}
+
+  ${({ theme: { media } }) => media.md`
+    font-size: 1em;
+    columns: 2;
   `}
 `;
 
-export const ImagesWrapper = styled.div`
+export const ImagesWrapper = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
@@ -65,6 +72,14 @@ export const ImagesWrapper = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  width: 50%;
+  width: 100%;
   padding: 2%;
+  
+  ${({ theme: { landingPage, media } }) => media.md`
+    width: 50%;
+    color: ${landingPage.description.color};
+    font-size: 1em;
+    font-weight: ${landingPage.description.fontWeight};
+    letter-spacing: ${landingPage.description.letterSpacing}em;
+  `}
 `;

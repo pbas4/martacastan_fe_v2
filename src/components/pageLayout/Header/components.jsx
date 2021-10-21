@@ -14,7 +14,11 @@ export const HeaderWrapper = styled.div`
 
   ${({ theme: { pageMargins, header } }) => `
     height: ${header.height}px;
-    padding: 0 ${pageMargins.md}px; 
+    padding: 0 ${pageMargins.sm}px; 
+  `}
+
+  ${({ theme: { pageMargins, media } }) => media.md`
+    padding: 0 ${pageMargins.md}px 0 ${pageMargins.md}px; 
   `}
 `;
 

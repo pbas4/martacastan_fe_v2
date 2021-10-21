@@ -64,6 +64,7 @@ export const ItemContent = styled(motion.div)`
 export const FilterContainer = styled(motion.ul)`
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   cursor: pointer;
   font-weight: 200;
   list-style: none;
